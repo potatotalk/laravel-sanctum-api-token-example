@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
  
 Route::post('/tokens/create', function (Request $request) {
     $token = $request->user()->createToken($request->token_name);
+//     $token = $user->createToken('auth_token', ['*'], now()->addMinutes(100));
     return ['token' => $token->plainTextToken];
 });
 
